@@ -1,0 +1,4 @@
+# base64 string of TLS certificate (dummy value here)
+#traefik_tls_crt:
+# base64 string of TLS private key (dummy value here)
+#traefik_tls_key:
