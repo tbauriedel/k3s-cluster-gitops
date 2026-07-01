@@ -1,0 +1,8 @@
+# kube-vip release version
+kube_vip_release: v1.0.4
+
+# mandatory: kube-vip interface on nodes
+#kube_vip_interface: ""
+
+# mandatory: kube-vip address
+#kube_vip_address: ""
