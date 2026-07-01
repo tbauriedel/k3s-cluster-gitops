@@ -10,18 +10,8 @@ spec:
     chart: csi-driver-nfs
     targetRevision: 4.11.0
     helm:
-      values: |
-        storageClasses:
-          - name: nfs
-            annotations:
-              storageclass.kubernetes.io/is-default-class: "true"
-            parameters:
-              server: {{ .Values.nfs_storage_server }}
-              share: {{ .Values.nfs_storage_share }}
-            reclaimPolicy: Delete
-            volumeBindingMode: Immediate
-            mountOptions:
-              - nfsvers=4.1
+        valueFiles:
+          - ../../cluster-definitions/local-cluster.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-system
