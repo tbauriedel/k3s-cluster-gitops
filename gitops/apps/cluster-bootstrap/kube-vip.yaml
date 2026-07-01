@@ -6,12 +6,12 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/tbauriedel/k3s-platform
-    targetRevision: add-gitops
-    path: gitops/charts/kube-vip
+    repoURL: https://github.com/tbauriedel/k3s-cluster-gitops
+    targetRevision: main
+    path: charts/kube-vip
     helm:
       valueFiles:
-        - cluster-definitions/local-cluster.yaml
+        - ../../cluster-definitions/local-cluster.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-system
