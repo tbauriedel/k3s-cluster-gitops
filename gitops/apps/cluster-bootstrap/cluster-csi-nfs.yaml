@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cluster-csi-nfs
+  namespace: argocd
+spec:
+  project: default
+  sources:
+    - repoURL: https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
+      chart: csi-driver-nfs
+      targetRevision: 4.11.0
+      helm:
+        valueFiles:
+          - $values/cluster-definitions/local-cluster.yaml
+    - repoURL: https://github.com/tbauriedel/k3s-cluster-gitops
+      targetRevision: main
+      ref: values
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kube-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
