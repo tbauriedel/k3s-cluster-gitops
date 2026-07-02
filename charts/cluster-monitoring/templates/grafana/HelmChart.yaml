@@ -9,6 +9,8 @@ spec:
   targetNamespace: monitoring
   version: 10.5.15
   valuesContent: |
+    initChownData:
+      enabled: false
     persistence:
       enabled:  true
       existingClaim: grafana-server-data
