@@ -6,7 +6,7 @@ metadata:
   namespace: monitoring
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
 {{- if .Values.monitoring_storage_class }}
   storageClassName: {{ .Values.monitoring_storage_class }}
 {{- end }}
