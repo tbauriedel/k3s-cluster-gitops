@@ -4,7 +4,7 @@ metadata:
   name: grafana
   namespace: monitoring
 spec:
-  repo: https://github.com/grafana-community/helm-charts
+  repo: https://grafana.github.io/helm-charts
   chart: grafana
   targetNamespace: monitoring
   version: 10.5.15
