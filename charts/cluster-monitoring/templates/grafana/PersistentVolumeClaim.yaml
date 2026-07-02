@@ -2,14 +2,13 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: prometheus-server-data
-  namespace: monitoring
+  name: grafana-server-data
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
 {{- if .Values.monitoring_storage_class }}
   storageClassName: {{ .Values.monitoring_storage_class }}
 {{- end }}
   resources:
     requests:
-      storage: {{ .Values.monitoring_storage_size_prometheus }}
+      storage: {{ .Values.monitoring_storage_size_grafana }}
