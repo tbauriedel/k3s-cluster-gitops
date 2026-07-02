@@ -1,0 +1,7 @@
+# storageclass used for the prometheus pvc
+monitoring_storage_class: default
+# size for the prometheus pvc
+monitoring_storage_size_prometheus: 8Gi
+
+# size for the grafana pvc
+monitoring_storage_size_grafana: 1Gi

@@ -1,0 +1,14 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: prometheus
+  namespace: monitoring
+spec:
+  repo: https://prometheus-community.github.io/helm-charts
+  chart: prometheus
+  targetNamespace: monitoring
+  version: 29.13.1
+  valuesContent: |
+    persistentVolume:
+      enabled:  true
+      existingClaim: prometheus-server-data
