@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: prometheus-server-data
+  namespace: monitoring
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: {{ .Values.monitoring_storage_class }}
+  resources:
+    requests: {{ .Values.monitoring_storage_size_prometheus }}
