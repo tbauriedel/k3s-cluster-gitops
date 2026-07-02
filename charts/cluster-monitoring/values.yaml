@@ -1,5 +1,5 @@
-# storageclass used for the prometheus pvc
-monitoring_storage_class: default
+# storageclass used for the prometheus pvc. Default SC is used by default
+#monitoring_storage_class: 
 # size for the prometheus pvc
 monitoring_storage_size_prometheus: 8Gi
 
