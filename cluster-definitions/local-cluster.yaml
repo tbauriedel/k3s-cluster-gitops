@@ -13,7 +13,7 @@ storageClasses:
     annotations:
       storageclass.kubernetes.io/is-default-class: "true"
     parameters:
-      server: 192.168.1.188
+      server: 192.168.121.188
       share: /data/k3s
     reclaimPolicy: Delete
     volumeBindingMode: Immediate
