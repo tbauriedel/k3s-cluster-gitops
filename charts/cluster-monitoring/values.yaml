@@ -1,7 +1,0 @@
-# storageclass used for the prometheus pvc. Default SC is used by default
-#monitoring_storage_class: 
-# size for the prometheus pvc
-monitoring_storage_size_prometheus: 8Gi
-
-# size for the grafana pvc
-monitoring_storage_size_grafana: 1Gi
