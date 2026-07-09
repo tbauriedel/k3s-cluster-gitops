@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-cluster-monitoring
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/tbauriedel/k3s-cluster-gitops
+    targetRevision: main
+    path: charts/cluster-monitoring
+    helm:
+      valueFiles:
+        - ../../cluster-definitions/local-cluster.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kube-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
